@@ -18,7 +18,7 @@ def fixed_coordinates():
     home_longitude = #insert home longitude here
     return home_latitude, home_longitude
 
-def haversine(home_latitude, home_longitude, bus_longitude, bus_latitude):
+def distance_calculation(home_latitude, home_longitude, bus_longitude, bus_latitude):
     earth_radius = 6371
 
     home_latitude = math.radians(home_latitude)
@@ -34,7 +34,7 @@ def haversine(home_latitude, home_longitude, bus_longitude, bus_latitude):
     return distance_km
       
 def distance_between(home_latitude, home_longitude, bus_longitude, bus_latitude):
-    distance_km = haversine(home_latitude, home_longitude, bus_longitude, bus_latitude)
+    distance_km = distance_calculation(home_latitude, home_longitude, bus_longitude, bus_latitude)
     distance_meter = distance_km * 1000
     print(f"Distance between the two locations is {distance_meter:.2f} meters")
 
